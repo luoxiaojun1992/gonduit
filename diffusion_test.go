@@ -47,8 +47,8 @@ const repositorySearchResponseJSON = `{
                 },
                 "credentialPHID": "PHID-CDTL-33r3eatdjwks355etw47",
                 "disabled": false,
-                "dateCreated": "1489737532",
-                "dateModified": "1489737532"
+                "dateCreated": 1489737532,
+                "dateModified": 1489737532
               }
             }
           ]
