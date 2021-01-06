@@ -31,7 +31,7 @@ func TestUnixTimestampMarshalJSON(t *testing.T) {
 func TestUnixTimestampUnmarshalJSON(t *testing.T) {
 	var subject TimeTestStruct
 
-	err := json.Unmarshal([]byte("{\"now\":1445754159}"), &subject)
+	err := json.Unmarshal([]byte("{\"now\":\"1445754159\"}"), &subject)
 
 	assert.Nil(t, err)
 	assert.Equal(t, int64(1445754159), time.Time(subject.Now).Unix())
@@ -40,7 +40,7 @@ func TestUnixTimestampUnmarshalJSON(t *testing.T) {
 func TestUnixTimestampUnmarshalJSON_withInvalid(t *testing.T) {
 	var subject TimeTestStruct
 
-	err := json.Unmarshal([]byte("{\"now\":null}"), &subject)
+	err := json.Unmarshal([]byte("{\"now\":\"\"}"), &subject)
 
 	assert.NotNil(t, err)
 
