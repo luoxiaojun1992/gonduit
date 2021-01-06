@@ -111,6 +111,8 @@ type ManiphestSearchResponseItem struct {
 		DateCreated util.UnixTimestamp `json:"dateCreated"`
 		// DateModified is epoch timestamp when the object was last updated.
 		DateModified util.UnixTimestamp `json:"dateModified"`
+		// DateClosed is epoch timestamp when the object was closed.
+		DateClosed util.UnixTimestamp `json:"dateClosed"`
 		// Policy is map of capabilities to current policies.
 		Policy SearchResultPolicy `json:"policy"`
 		// CustomTaskType is custom task type.
