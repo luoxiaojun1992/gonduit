@@ -3,6 +3,7 @@ package util
 import (
 	"fmt"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -17,7 +18,7 @@ func (t UnixTimestamp) MarshalJSON() ([]byte, error) {
 // UnmarshalJSON implements the json.Unmarshaler interface.
 func (t *UnixTimestamp) UnmarshalJSON(data []byte) (err error) {
 	seconds, err := strconv.Atoi(
-		string(data),
+		strings.Trim(string(data), "\\\""),
 	)
 	if err != nil {
 		return err
